@@ -1,6 +1,6 @@
 import { Component, OnInit } from '@angular/core';
-import {district} from '../../shared/district';
-import {UserService} from '../../services/user.service';
+import {District} from '../../shared/district';
+import {DistrictService} from '../../services/district.service';
 
 @Component({
   selector: 'app-home',
@@ -9,15 +9,15 @@ import {UserService} from '../../services/user.service';
 })
 export class HomeComponent implements OnInit {
 
-  districts: district[] = [];
+  districts: District[] = [];
   name: string= '';
 
-  constructor(private UserService: UserService) {
+  constructor(private districtService: DistrictService) {
     this.name="hola DARIUS / CARLOS / BRUNO / JESPOL Marikong"
    }
 
   ngOnInit(): void {
-    this.UserService.getDistrict().subscribe(dis => this.districts = dis)
+    this.districtService.getDistrict().subscribe(dis => this.districts = dis)
   }
 
  
