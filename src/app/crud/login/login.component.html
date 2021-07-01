@@ -1,6 +1,6 @@
 <section class="h-100 w-100 row justify-content-center align-items-center background-fondo mx-0">
   <div class="w-50 text-center d-flex justify-content-center ">
-    <div class="w-75 text-center d-flex justify-content-center ">
+    <div class="w-75 text-center d-flex justify-content-center relativo">
         <mat-card class="example-card w-75 opacidad">
             <mat-card-header class="d-flex justify-content-center ">
               <mat-card-title class="text-secondary"><h1>Login</h1></mat-card-title>
@@ -19,12 +19,12 @@
                 </mat-form-field>
                 <br>
                 <mat-form-field class="w-75">
-                    <input matInput formControlName="password" placeholder="Password" type="text" class="form-control"  name="password">
+                    <input matInput formControlName="password" placeholder="Contraseña" type="text" class="form-control"  name="password">
                     <mat-error *ngIf="formErrors.password">{{formErrors.password}}</mat-error>
                 </mat-form-field>
                 <br>
                 <br>
-                <button id="submit" mat-button class="btn btn-success text-white" type="submit" color="primary">Submit</button>
+                <button id="submit" mat-button class="btn btn-success text-white" type="submit" color="primary">Ingresar</button>
            
               </form>
 
@@ -34,11 +34,4 @@
   </div>
 </section>
 
-<p>
-    --------------
-</p>
 
-
-<p>
-    {{ feedbackForm.value | json}}
-</p>

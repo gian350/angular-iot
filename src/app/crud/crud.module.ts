@@ -6,9 +6,12 @@ import { FooterComponent } from './footer/footer.component';
 import { HeaderComponent } from './header/header.component';
 import { HomeComponent } from './home/home.component';
 import { LoginComponent } from './login/login.component';
+import { DialogSpinnerComponent } from './componentes/dialog-spinner/dialog-spinner.component';
 
 //modulos
 import { FormsModule } from '@angular/forms'; 
+import { AppRoutingModule } from './app-routing/app-routing.module';
+import { ComponentesModule } from '../crud/componentes/componentes.module'; 
 
 //servicios
 import {UserService} from '../services/user.service';
@@ -28,6 +31,8 @@ import { MatOptionModule } from '@angular/material/core';
 import { MatProgressSpinnerModule } from '@angular/material/progress-spinner';
 import {MatFormFieldModule} from '@angular/material/form-field';
 import { ReactiveFormsModule } from '@angular/forms';
+import {MatDialogModule} from '@angular/material/dialog';
+
 
 
 
@@ -56,7 +61,10 @@ import { ReactiveFormsModule } from '@angular/forms';
     MatProgressSpinnerModule,
     MatFormFieldModule,
     ReactiveFormsModule,
-    FormsModule
+    FormsModule,
+    AppRoutingModule,
+    ComponentesModule,
+    MatDialogModule
   ],
   exports: [
     FooterComponent,

@@ -19,4 +19,22 @@
     opacity: 0.92;
     background-color:white;
     text-align: center;
-  }
+}
+
+.relativo{
+    position: relative;
+}
+
+.centrarAbsoluto{
+    position: absolute;
+    top: 40%;
+    left: 40%;
+    right: 0;
+    bottom: 0;
+    margin: auto;
+}
+
+
+.uploader-status ::ng-deep .mat-progress-spinner circle, .mat-spinner circle {
+    stroke: #000000;
+}
