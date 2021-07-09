@@ -1,4 +1,6 @@
 export class District {
-    _id: Number = 0;
+    _id: String = '';
     name: String = '';
+    city: String = '';
+    region: String = '';
 }

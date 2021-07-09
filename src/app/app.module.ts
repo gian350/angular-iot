@@ -13,7 +13,6 @@ import { RouterModule } from '@angular/router';
 //servicios
 import {UserService} from './services/user.service';
 import {ProcessHTTPMsgService} from './services/process-httpmsg.service';
-import { baseURL } from './shared/baseurl';
 
 
 @NgModule({
@@ -30,8 +29,7 @@ import { baseURL } from './shared/baseurl';
   ],
   providers: [
     UserService,
-    ProcessHTTPMsgService,
-    {provide: 'BaseURL', useValue: baseURL} // se puede proveer una propiedad global
+    ProcessHTTPMsgService
   ],
   bootstrap: [AppComponent]
 })

@@ -12,7 +12,7 @@ import { DialogSpinnerComponent } from './componentes/dialog-spinner/dialog-spin
 import { FormsModule } from '@angular/forms'; 
 import { AppRoutingModule } from './app-routing/app-routing.module';
 import { ComponentesModule } from '../crud/componentes/componentes.module'; 
-
+import { RouterModule } from '@angular/router';
 //servicios
 import {UserService} from '../services/user.service';
 
@@ -32,9 +32,9 @@ import { MatProgressSpinnerModule } from '@angular/material/progress-spinner';
 import {MatFormFieldModule} from '@angular/material/form-field';
 import { ReactiveFormsModule } from '@angular/forms';
 import {MatDialogModule} from '@angular/material/dialog';
-
-
-
+import {MatSidenavModule} from '@angular/material/sidenav';
+import { SensorComponent } from './sensor/sensor.component';
+import { DistritoComponent } from './distrito/distrito.component';
 
 
 
@@ -43,7 +43,9 @@ import {MatDialogModule} from '@angular/material/dialog';
     FooterComponent,
     HeaderComponent,
     HomeComponent,
-    LoginComponent
+    LoginComponent,
+    SensorComponent,
+    DistritoComponent
   ],
   imports: [
     CommonModule,
@@ -64,13 +66,18 @@ import {MatDialogModule} from '@angular/material/dialog';
     FormsModule,
     AppRoutingModule,
     ComponentesModule,
-    MatDialogModule
+    MatDialogModule,
+    MatSidenavModule,
+    RouterModule
+    
   ],
   exports: [
     FooterComponent,
     HeaderComponent,
     HomeComponent,
-    LoginComponent
+    LoginComponent,
+    SensorComponent,
+    DistritoComponent
   ],
   providers: [
     UserService

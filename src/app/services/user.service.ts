@@ -14,13 +14,17 @@ import { ProcessHTTPMsgService } from '../services/process-httpmsg.service';
 })
 export class UserService {
 
+  getUser(dni: string | any): Observable<User> {
+    return this.http.get<User>(baseURL+'users/'+ dni).pipe(catchError(this.processHTTPMsgService.handleError));
+  }
+
   getUsers(): Observable<User[]> {
-    return this.http.get<User[]>('/api/users').pipe(catchError(this.processHTTPMsgService.handleError));
+    return this.http.get<User[]>(baseURL+'users').pipe(catchError(this.processHTTPMsgService.handleError));
   }
 
   getSignin(email: String,password: String): Observable<Loginuser> {
     const jsonbody = {email, password}
-    return this.http.post<Loginuser>('/api/users/signin',jsonbody).pipe(catchError(this.processHTTPMsgService.handleError));
+    return this.http.post<Loginuser>(baseURL+'users/signin',jsonbody).pipe(catchError(this.processHTTPMsgService.handleError));
   }
 
 

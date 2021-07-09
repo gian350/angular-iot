@@ -1,6 +1,17 @@
-import { Component, OnInit } from '@angular/core';
+import { Component, OnInit, ViewChild, Input } from '@angular/core';
+import {MatSidenav} from '@angular/material/sidenav';
+import {BreakpointObserver} from '@angular/cdk/layout';
+import { Params, ActivatedRoute, ParamMap } from '@angular/router';
+import { LoginComponent } from '../login/login.component';
+
+// Modelos
 import {District} from '../../shared/district';
+import {Loginuser} from '../../shared/loginuser';
+
+// Servicios
 import {DistrictService} from '../../services/district.service';
+import {UserService} from '../../services/user.service';
+import { User } from 'src/app/shared/user';
 
 @Component({
   selector: 'app-home',
@@ -9,15 +20,49 @@ import {DistrictService} from '../../services/district.service';
 })
 export class HomeComponent implements OnInit {
 
-  districts: District[] = [];
-  name: string= '';
+  // diseño de sidebar
+  @ViewChild(MatSidenav)
+  sidenav!: MatSidenav;
 
-  constructor(private districtService: DistrictService) {
-    this.name="hola DARIUS / CARLOS / BRUNO / JESPOL Marikong"
+  // variables de negocio
+  districts: District[] = [];
+  usuarioLogin: User | any;
+  name: String= '';
+  dni: string | any= '' ;
+  url:string;
+
+  constructor(
+    private districtService: DistrictService,
+    private userService: UserService,
+    private route: ActivatedRoute,
+    private observer: BreakpointObserver
+  ) 
+  {
+    this.name= "Hola Mundo"
    }
 
   ngOnInit(): void {
-    this.districtService.getDistrict().subscribe(dis => this.districts = dis)
+    this.route.paramMap.subscribe((params: ParamMap) => {
+      this.dni = params.get('dni');
+    });
+    this.districtService.getDistricts().subscribe(dis => this.districts = dis);
+    this.userService.getUser(this.dni).subscribe((user) => {
+      console.log(user);
+      this.usuarioLogin = user;
+    });
+    
+  }
+
+  ngAfterViewInit() {
+    this.observer.observe(['(max-width: 800px)']).subscribe((res) => {
+      if (res.matches) {
+        this.sidenav.mode = 'over';
+        this.sidenav.close();
+      } else {
+        this.sidenav.mode = 'side';
+        this.sidenav.open();
+      }
+    });
   }
 
  

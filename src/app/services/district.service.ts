@@ -13,9 +13,11 @@ import { ProcessHTTPMsgService } from '../services/process-httpmsg.service';
 })
 export class DistrictService {
 
-  getDistrict(): Observable<District[]> {
-    return this.http.get<District[]>('/api/districts').pipe(catchError(this.processHTTPMsgService.handleError));
+  getDistricts(): Observable<District[]> {
+    return this.http.get<District[]>(baseURL+'districts').pipe(catchError(this.processHTTPMsgService.handleError));
   }
+
+  //deleteDistrictById():
 
   constructor(private http: HttpClient,
     private processHTTPMsgService: ProcessHTTPMsgService) { }

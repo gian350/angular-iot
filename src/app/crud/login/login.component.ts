@@ -19,7 +19,7 @@ import Swal from'sweetalert2';
 export class LoginComponent implements OnInit {
 
   feedbackForm: FormGroup;
-  feedback: User;  
+  feedbarckUser: User;  
   //@ViewChild('fform') feedbackFormDirective;
   usersing: Loginuser;
 
@@ -48,14 +48,10 @@ export class LoginComponent implements OnInit {
   }
 
   onSubmit() {
-    /* this.feedback = this.feedbackForm.value;
-     console.log(this.feedback);
-     this.feedbackForm.reset(); // vuelve a null todos los formControl*/
-     this.feedback = this.feedbackForm.value;
-     console.log(this.feedback);
-     //this.openDialogSpinner();
+     this.feedbarckUser = this.feedbackForm.value;
+     console.log(this.feedbarckUser);
      this.showspinner();
-     this.userService.getSignin(this.feedback.email,this.feedback.password).subscribe((logeo) => {
+     this.userService.getSignin(this.feedbarckUser.email,this.feedbarckUser.password).subscribe((logeo) => {
         this.usersing = logeo;
         console.log(this.usersing);
         setTimeout(() => {
@@ -63,18 +59,6 @@ export class LoginComponent implements OnInit {
           const token0 = "0";
           const token1 = "1";
           const token2 = "2";
-          /*
-          if(!this.usersing){
-            this.showModaltoken0();
-          }else{
-            if(this.usersing.token = "1"){
-              this.router.navigate(['/home']); 
-              this.dialog.closeAll()
-            }else{
-              this.showModaltoken0();
-            }
-          }
-          */
 
           switch(this.usersing.token) { 
             case token0: { //email incorrecto
@@ -84,7 +68,7 @@ export class LoginComponent implements OnInit {
             } 
             case token1: { //password incorrecto
                //statements; 
-               this.showModaltoken1();
+               this.showModaltoken1(this.usersing);
                
                break; 
             } 
@@ -179,13 +163,15 @@ export class LoginComponent implements OnInit {
     });
   }
 
-  showModaltoken1() {
+  showModaltoken1(usuario: Loginuser) {
     Swal.fire({
         title: 'Usuario correcto',
         icon: 'success',
         width: '40%',
         heightAuto: false,
-    }).then(()=> {this.router.navigate(['/home']);});
+    }).then(()=> {
+      this.router.navigate(['/home',usuario.userId]);
+      });
   }
 
   showspinner(){

@@ -18,17 +18,34 @@ import { MatProgressSpinnerModule } from '@angular/material/progress-spinner';
 import {MatFormFieldModule} from '@angular/material/form-field';
 import { ReactiveFormsModule } from '@angular/forms';
 import {MatDialogModule} from '@angular/material/dialog';
+import { TablaDistritoComponent } from './tabla-distrito/tabla-distrito.component';
+import {MatPaginatorModule} from '@angular/material/paginator';
+import {MatTooltipModule} from '@angular/material/tooltip';
+import {MatSortModule} from '@angular/material/sort';
+
 
 @NgModule({
   declarations: [
-    DialogSpinnerComponent
+    DialogSpinnerComponent,
+    TablaDistritoComponent
   ],
   imports: [
     CommonModule,
-    MatProgressSpinnerModule
+    MatProgressSpinnerModule,
+    MatFormFieldModule,
+    ReactiveFormsModule,
+    MatDialogModule,
+    MatPaginatorModule,
+    MatTableModule,
+    MatInputModule,
+    MatIconModule,
+    MatTooltipModule,
+    MatSortModule
   ],
   exports:[
-    DialogSpinnerComponent
+    DialogSpinnerComponent,
+    TablaDistritoComponent,
+    
   ]
 })
 export class ComponentesModule { }
