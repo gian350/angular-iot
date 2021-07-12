@@ -13,27 +13,32 @@
 
 <mat-sidenav-container>
     <mat-sidenav #sidenav="matSidenav" class="mat-elevation-z8">
-
-        <img class="avatar mat-elevation-z8" src="https://source.unsplash.com/c_GmwfHBDzk/200x200" />
-        <h4 class="name" *ngIf="usuarioLogin">{{usuarioLogin.name}} {{usuarioLogin.surname}}</h4>
-        <p class="designation">Support</p>
+        <div class="my-3">
+            <img class="avatar mat-elevation-z8" src="{{fotourl}}"/>
+        </div>
+        
+        <div class="my-3">
+            <h4 class="name" *ngIf="usuarioLogin">{{usuarioLogin.name}} {{usuarioLogin.surname}}</h4>
+            <p class="designation">Support</p>
+        </div>
+        
 
         <mat-divider></mat-divider>
 
-        <button mat-button class="menu-button">
+        <button mat-button class="menu-button my-2" routerLink="dashboard" routerLinkActive="active">
             <mat-icon>home</mat-icon>
-            <span>Inicio</span>
+            <span>Dashboard</span>
         </button>
-        <button mat-button class="menu-button">
+        <button mat-button class="menu-button my-2">
             <mat-icon>person</mat-icon>
             <span>Perfil</span>
         </button>
-        <button mat-button class="menu-button" routerLink="distrito" routerLinkActive="active">
+        <button mat-button class="menu-button my-2" routerLink="distrito" routerLinkActive="active">
             <mat-icon>info</mat-icon>
             <span>Distritos</span>
         </button>
 
-        <button mat-button class="menu-button" routerLink="sensor" routerLinkActive="active">
+        <button mat-button class="menu-button my-2" routerLink="sensor" routerLinkActive="active">
             <mat-icon>pageview</mat-icon>
             <span>Sensores</span>
         </button>
@@ -49,7 +54,18 @@
         <div class="content mat-elevation-z8">
             <div class="w-100 d-flex flex-column">
 
-                <router-outlet></router-outlet>
+                <div class="w-100 ">
+                    <div class="w-100 d-flex justify-content-center">
+                        <div class="body">
+                            <div class="w-100">
+                                <router-outlet></router-outlet>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+
+
+                
 
             </div>
         </div>

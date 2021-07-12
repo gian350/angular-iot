@@ -1,0 +1,155 @@
+<div class="w-100">
+
+    <div class="w-100 my-3">
+        <!-- Titulo  -->
+        <div class="mx-4 my-1">
+            <h1>Dashboard</h1>
+        </div>
+
+        <!-- Tarjetas de presentación  -->
+        <div class="d-flex justify-content-around my-1">
+            <div class="card m-1">
+                <mat-card class="example-card" style="background-color: #82CACD;">
+                    <mat-card-header>
+                        <div mat-card-avatar class="example-header-image"></div>
+                        <mat-card-title>16</mat-card-title>
+                        <mat-card-subtitle>Usuarios</mat-card-subtitle>
+                    </mat-card-header>
+                    <mat-card-content>
+                        <div>
+                            <p>
+                                The Shiba Inu is the smallest of the six original
+                            </p>
+                        </div>
+                        <div class="w-100">
+                            <canvas baseChart [data]="doughnutChartData" [labels]="doughnutChartLabels"
+                                [chartType]="doughnutChartType" [colors]="[{backgroundColor: ['#0396FF']}]"
+                                [legend]="doughnutChartLegend">
+                            </canvas>
+                        </div>
+                    </mat-card-content>
+                    <mat-card-actions>
+                        <button mat-button>LIKE</button>
+                        <button mat-button>SHARE</button>
+                    </mat-card-actions>
+                </mat-card>
+            </div>
+            <div class="card m-1">
+                <mat-card class="example-card" style="background-color: #F8D800;">
+                    <mat-card-header>
+                        <div mat-card-avatar class="example-header-image"></div>
+                        <mat-card-title>5</mat-card-title>
+                        <mat-card-subtitle>Sensores</mat-card-subtitle>
+                    </mat-card-header>
+                    <mat-card-content>
+                        <div>
+                            <p>
+                                The Shiba Inu is the smallest of the six original
+                            </p>
+                        </div>
+                        <div class="w-100">
+                            <canvas baseChart [data]="doughnutChartData" [labels]="doughnutChartLabels"
+                                [chartType]="doughnutChartType" [colors]="[{backgroundColor: ['#F55555']}]"
+                                [legend]="doughnutChartLegend">
+                            </canvas>
+                        </div>
+                    </mat-card-content>
+                    <mat-card-actions>
+                        <button mat-button>LIKE</button>
+                        <button mat-button>SHARE</button>
+                    </mat-card-actions>
+                </mat-card>
+            </div>
+            <div class="card m-1">
+                <mat-card class="example-card" style="background-color: #6af984;">
+                    <mat-card-header>
+                        <div mat-card-avatar class="example-header-image"></div>
+                        <mat-card-title>10</mat-card-title>
+                        <mat-card-subtitle>Variables</mat-card-subtitle>
+                    </mat-card-header>
+                    <mat-card-content>
+                        <div>
+                            <p>
+                                The Shiba Inu is the smallest of the six original
+                            </p>
+                        </div>
+                        <div class="w-100">
+                            <canvas baseChart [data]="doughnutChartData" [labels]="doughnutChartLabels"
+                                [chartType]="doughnutChartType" [colors]="[{backgroundColor: ['#28C76F']}]"
+                                [legend]="doughnutChartLegend">
+                            </canvas>
+                        </div>
+                    </mat-card-content>
+                    <mat-card-actions>
+                        <button mat-button>LIKE</button>
+                        <button mat-button>SHARE</button>
+                    </mat-card-actions>
+                </mat-card>
+            </div>
+            <div class="card m-1">
+                <mat-card class="example-card" style="background-color: #cb93f2;">
+                    <mat-card-header>
+                        <div mat-card-avatar class="example-header-image"></div>
+                        <mat-card-title>30</mat-card-title>
+                        <mat-card-subtitle>Distritos</mat-card-subtitle>
+                    </mat-card-header>
+                    <mat-card-content>
+                        <div>
+                            <p>
+                                The Shiba Inu is the smallest of the six original
+                            </p>
+                        </div>
+                        <div class="w-100">
+                            <canvas baseChart [data]="doughnutChartData" [labels]="doughnutChartLabels"
+                                [chartType]="doughnutChartType" [colors]="[{backgroundColor: ['#9F44D3']}]"
+                                [legend]="doughnutChartLegend">
+                            </canvas>
+                        </div>
+                    </mat-card-content>
+                    <mat-card-actions>
+                        <button mat-button>LIKE</button>
+                        <button mat-button>SHARE</button>
+                    </mat-card-actions>
+                </mat-card>
+            </div>
+        </div>
+
+        <!-- Cuadros -->
+        <div class="my-1 w-100 d-flex flex-column">
+            <div class="w-100 d-flex" style="height: 470px;">
+                <div class="w-50 m-1" style="background-color: khaki;">
+                    <mat-card class="example-card">
+                        <mat-card-header>
+                            <div mat-card-avatar class="example-header-image"></div>
+                            <mat-card-title>Shiba Inu</mat-card-title>
+                            <mat-card-subtitle>Dog Breed</mat-card-subtitle>
+                        </mat-card-header>
+                        <div >
+                            <img mat-card-image src="https://material.angular.io/assets/img/examples/shiba2.jpg"
+                            alt="Photo of a Shiba Inu">
+                        </div>
+                        
+                        <mat-card-content>
+                            <p>
+                                The Shiba Inu is the smallest of the six original and distinct spitz breeds of dog from
+                                Japan.
+                            </p>
+                        </mat-card-content>
+                    </mat-card>
+                </div>
+                <div class="w-50 m-1" style="background-color: khaki;">
+
+                </div>
+            </div>
+            <div class="w-100 d-flex" style="height: 470px;">
+                <div class="w-50 m-1" style="background-color: khaki;">
+                </div>
+                <div class="w-50 m-1" style="background-color: khaki;">
+                </div>
+            </div>
+        </div>
+
+    </div>
+</div>
+
+

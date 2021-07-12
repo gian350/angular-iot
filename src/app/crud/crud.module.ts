@@ -13,6 +13,9 @@ import { FormsModule } from '@angular/forms';
 import { AppRoutingModule } from './app-routing/app-routing.module';
 import { ComponentesModule } from '../crud/componentes/componentes.module'; 
 import { RouterModule } from '@angular/router';
+import { AgmCoreModule } from '@agm/core';
+import { ChartsModule } from 'ng2-charts';
+
 //servicios
 import {UserService} from '../services/user.service';
 
@@ -35,6 +38,8 @@ import {MatDialogModule} from '@angular/material/dialog';
 import {MatSidenavModule} from '@angular/material/sidenav';
 import { SensorComponent } from './sensor/sensor.component';
 import { DistritoComponent } from './distrito/distrito.component';
+import { DashboardComponent } from './dashboard/dashboard.component';
+
 
 
 
@@ -45,7 +50,8 @@ import { DistritoComponent } from './distrito/distrito.component';
     HomeComponent,
     LoginComponent,
     SensorComponent,
-    DistritoComponent
+    DistritoComponent,
+    DashboardComponent
   ],
   imports: [
     CommonModule,
@@ -68,8 +74,11 @@ import { DistritoComponent } from './distrito/distrito.component';
     ComponentesModule,
     MatDialogModule,
     MatSidenavModule,
-    RouterModule
-    
+    ChartsModule,
+    RouterModule,
+    AgmCoreModule.forRoot({
+      apiKey: 'AIzaSyD7sDUN-AIzaSyAvcDy5ZYc2ujCS6TTtI3RYX5QmuoV8Ffw'
+    })
   ],
   exports: [
     FooterComponent,

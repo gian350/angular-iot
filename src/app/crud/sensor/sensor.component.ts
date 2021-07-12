@@ -7,7 +7,17 @@ import { Component, OnInit } from '@angular/core';
 })
 export class SensorComponent implements OnInit {
 
-  constructor() { }
+  lat: number;
+  lng: number;
+  zoom: number;
+  mapTypeId: string; 
+
+  constructor() { 
+    this.lat = 40;
+    this.lng = -3;
+    this.zoom = 6;
+    this.mapTypeId = 'hybrid';
+  }
 
   ngOnInit(): void {
   }

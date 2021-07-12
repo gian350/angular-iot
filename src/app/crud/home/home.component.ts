@@ -30,6 +30,7 @@ export class HomeComponent implements OnInit {
   name: String= '';
   dni: string | any= '' ;
   url:string;
+  fotourl: string;
 
   constructor(
     private districtService: DistrictService,
@@ -49,7 +50,19 @@ export class HomeComponent implements OnInit {
     this.userService.getUser(this.dni).subscribe((user) => {
       console.log(user);
       this.usuarioLogin = user;
+
+      if(this.usuarioLogin.photo == 0){
+        this.fotourl = "../../../assets/img/default.jpg";
+        console.log(this.fotourl);
+      }else{
+        this.fotourl = "../../../assets/img/"+this.dni+".jpg";
+        console.log(this.fotourl);
+      }
+
     });
+    
+    
+    
     
   }
 
