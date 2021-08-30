@@ -24,10 +24,17 @@ import {MatTooltipModule} from '@angular/material/tooltip';
 import {MatSortModule} from '@angular/material/sort';
 
 
+
+import { ChartsModule } from 'ng2-charts';
+
+import { LinechartComponent } from './linechart/linechart.component';
+
+
 @NgModule({
   declarations: [
     DialogSpinnerComponent,
-    TablaDistritoComponent
+    TablaDistritoComponent,
+    LinechartComponent
   ],
   imports: [
     CommonModule,
@@ -40,12 +47,15 @@ import {MatSortModule} from '@angular/material/sort';
     MatInputModule,
     MatIconModule,
     MatTooltipModule,
-    MatSortModule
+    MatSortModule,
+    ChartsModule,
+    MatOptionModule,
+    MatSelectModule
   ],
   exports:[
     DialogSpinnerComponent,
     TablaDistritoComponent,
-    
+    LinechartComponent,
   ]
 })
 export class ComponentesModule { }

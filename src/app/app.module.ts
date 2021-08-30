@@ -31,7 +31,7 @@ import {ProcessHTTPMsgService} from './services/process-httpmsg.service';
     ChartsModule,
     BrowserAnimationsModule,
     AgmCoreModule.forRoot({
-      apiKey: 'AIzaSyD7sDUN-1VnhzLo82n5INIuvT11YdlCClw'
+      apiKey: 'AIzaSyACQcKBv6-MSnu6y61Vh8NyDxgD6MVBNmA'
     })
   ],
   providers: [

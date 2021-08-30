@@ -39,7 +39,7 @@ import {MatSidenavModule} from '@angular/material/sidenav';
 import { SensorComponent } from './sensor/sensor.component';
 import { DistritoComponent } from './distrito/distrito.component';
 import { DashboardComponent } from './dashboard/dashboard.component';
-
+import {MatBadgeModule} from '@angular/material/badge';
 
 
 
@@ -76,8 +76,9 @@ import { DashboardComponent } from './dashboard/dashboard.component';
     MatSidenavModule,
     ChartsModule,
     RouterModule,
+    MatBadgeModule,
     AgmCoreModule.forRoot({
-      apiKey: 'AIzaSyD7sDUN-AIzaSyAvcDy5ZYc2ujCS6TTtI3RYX5QmuoV8Ffw'
+      apiKey: 'AIzaSyD7sDUN-MSnu6y61Vh8NyDxgD6MVBNmA'
     })
   ],
   exports: [

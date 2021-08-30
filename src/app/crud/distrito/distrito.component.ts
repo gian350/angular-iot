@@ -10,6 +10,9 @@ export class DistritoComponent implements OnInit {
   constructor() { }
 
   ngOnInit(): void {
+    
   }
+
+  
 
 }

@@ -16,6 +16,7 @@ export const routes: Routes = [
             {path: 'dashboard', component: DashboardComponent},
             {path: 'sensor', component: SensorComponent},
             {path: 'distrito', component: DistritoComponent},
+            {path: '', redirectTo: 'distrito', pathMatch: 'full'}
         ]
     },
     {path: '', redirectTo: '/login', pathMatch: 'full'} 

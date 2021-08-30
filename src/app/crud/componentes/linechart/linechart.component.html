@@ -1,0 +1,21 @@
+<div class="d-flex flex-column w-100">
+    <div class="d-flex justify-content-end mx-5 mb-3">
+        
+            <mat-form-field appearance="fill" class="mat-select-content">
+                <mat-label>Seleccione</mat-label>
+                <mat-select [(value)]="selectedvalue" (selectionChange)="updateChart($event.value)">
+                    <div *ngFor="let item of listaSensores">
+                        <mat-option value="{{item}}">{{item.name}}</mat-option>
+                    </div>
+                </mat-select>
+            </mat-form-field>
+        
+    </div>
+    <div>
+        <div *ngIf=lineChartData[0].data>
+            <canvas id="canvas">
+
+            </canvas>
+        </div>
+    </div>
+</div>

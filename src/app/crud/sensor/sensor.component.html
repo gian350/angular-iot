@@ -1,6 +1,36 @@
-<p>ventana de sensor</p>
-<div>
-    <agm-map [latitude]="lat" [longitude]="lng">
-        <agm-marker [latitude]="lat" [longitude]="lng"></agm-marker>
+<div class="w-100 d-flex flex-column">
+  <div class="w-100 text-center my-3">
+    <h1>Busqueda de Sensores</h1>
+  </div>
+  <div class="w-100 d-flex justify-content-center my-3">
+    <div class="mapa">
+      <agm-map class="w-100" [latitude]="lat" [zoom]="zoom" [longitude]="lng">
+        <div *ngIf="listaNodo">
+          <div *ngFor="let item of listaNodo"> <!-- Tengo que igualar el sensorID -->
+            <agm-marker [latitude]="item.sensor.coordX" [longitude]="item.sensor.coordY">
+
+              <agm-info-window>
+                <div>
+                  <div class="text-center my-2">
+                    Nombre: {{item.sensor.name}}
+                  </div>
+                  <div class="text-center my-1">
+                    Medida : {{item.history.value}}
+                  </div>
+                  <div class="text-center my-1">
+                    Ubicación : {{item.sensor.location}}
+                  </div>
+                  <div class="text-center my-1">
+                    Fecha : {{item.history.date | date: "dd/MM/yyyy"}}
+                  </div>
+                </div>
+                
+              </agm-info-window>
+
+            </agm-marker>
+          </div>
+        </div>
       </agm-map>
+    </div>
+  </div>
 </div>

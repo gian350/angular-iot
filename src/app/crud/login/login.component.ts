@@ -176,7 +176,7 @@ export class LoginComponent implements OnInit {
 
   showspinner(){
     Swal.fire({
-        title: 'Please Wait',
+        title: 'Espere por favor',
         allowEscapeKey: false,
         allowOutsideClick: false,
         width: '40%',

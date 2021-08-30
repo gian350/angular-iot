@@ -1,27 +1,58 @@
-<mat-toolbar class="mat-elevation-z8">
-    <!-- *ngIf="sidenav.mode === 'over'" -->
-    <button mat-icon-button (click)="sidenav.toggle()">
-        <mat-icon *ngIf="!sidenav.opened">
-            menu
-        </mat-icon>
-        <mat-icon *ngIf="sidenav.opened">
-            menu
-        </mat-icon>
-    </button>
-    MongoIOT Responsive
+<mat-toolbar class="w-100">
+    <div class="d-flex bar-ele">
+        <!-- *ngIf="sidenav.mode === 'over'" -->
+        <button mat-icon-button (click)="sidenav.toggle()">
+            <mat-icon *ngIf="!sidenav.opened">
+                menu
+            </mat-icon>
+            <mat-icon *ngIf="sidenav.opened">
+                menu
+            </mat-icon>
+        </button>
+        <div class="d-flex align-items-center">MongoIOT Responsive</div>
+    </div>
+
+    <div class="bar-ele2">
+        <div class="d-flex justify-content-end">
+            <div class="mx-3 d-flex align-items-center">
+                <mat-icon matBadgeColor="primary">
+                    <mat-icon>search</mat-icon>
+                </mat-icon>
+            </div>
+            <div class="mx-3 d-flex align-items-center">
+                <mat-icon matBadge="2" matBadgeColor="primary">
+                    <mat-icon>language</mat-icon>
+                </mat-icon>
+            </div>
+            <div class="mx-3 d-flex align-items-center">
+                <mat-icon matBadge="5" matBadgeColor="primary">
+                    notifications
+                </mat-icon>
+            </div>
+            <div class="mx-3 d-flex align-items-center">
+                <mat-icon matBadgeColor="primary">
+                    <mat-icon>help</mat-icon>
+                </mat-icon>
+            </div>
+            <div class="mx-3">
+                <button mat-raised-button routerLink="/"><mat-icon>power_settings_new</mat-icon> Salir</button>
+            </div>
+
+        </div>
+    </div>
 </mat-toolbar>
 
 <mat-sidenav-container>
     <mat-sidenav #sidenav="matSidenav" class="mat-elevation-z8">
         <div class="my-3">
-            <img class="avatar mat-elevation-z8" src="{{fotourl}}"/>
+            <img class="avatar mat-elevation-z8" src="{{fotourl}}" />
         </div>
-        
+
         <div class="my-3">
             <h4 class="name" *ngIf="usuarioLogin">{{usuarioLogin.name}} {{usuarioLogin.surname}}</h4>
-            <p class="designation">Support</p>
+            <p class="designation">Analista</p>
         </div>
-        
+
 
         <mat-divider></mat-divider>
 
@@ -65,7 +96,7 @@
                 </div>
 
 
-                
+
 
             </div>
         </div>
