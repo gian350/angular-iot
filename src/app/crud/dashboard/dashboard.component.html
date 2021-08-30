@@ -12,17 +12,17 @@
                 <mat-card class="example-card" style="background-color: #82CACD;">
                     <mat-card-header>
                         <div mat-card-avatar class="example-header-image1"></div>
-                        <mat-card-title>16</mat-card-title>
+                        <mat-card-title *ngIf="countUsers">{{countUsers}}</mat-card-title>
                         <mat-card-subtitle>Usuarios</mat-card-subtitle>
                     </mat-card-header>
                     <mat-card-content>
                         <div>
                             <p>
-                                
+
                             </p>
                         </div>
                         <div class="w-100">
-                            <canvas baseChart [data]="doughnutChartData" [labels]="doughnutChartLabels"
+                            <canvas baseChart [data]="doughnutChartDataUser" [labels]="doughnutChartLabelsUser"
                                 [chartType]="doughnutChartType" [colors]="[{backgroundColor: ['#0396FF']}]"
                                 [legend]="doughnutChartLegend">
                             </canvas>
@@ -38,17 +38,17 @@
                 <mat-card class="example-card" style="background-color: #F8D800;">
                     <mat-card-header>
                         <div mat-card-avatar class="example-header-image2"></div>
-                        <mat-card-title>5</mat-card-title>
+                        <mat-card-title *ngIf="countSensors">{{countSensors}}</mat-card-title>
                         <mat-card-subtitle>Sensores</mat-card-subtitle>
                     </mat-card-header>
                     <mat-card-content>
                         <div>
                             <p>
-                                
+
                             </p>
                         </div>
                         <div class="w-100">
-                            <canvas baseChart [data]="doughnutChartData" [labels]="doughnutChartLabels"
+                            <canvas baseChart [data]="doughnutChartDataSensores" [labels]="doughnutChartLabelsSensores"
                                 [chartType]="doughnutChartType" [colors]="[{backgroundColor: ['#F55555']}]"
                                 [legend]="doughnutChartLegend">
                             </canvas>
@@ -64,19 +64,19 @@
                 <mat-card class="example-card" style="background-color: #6af984;">
                     <mat-card-header>
                         <div mat-card-avatar class="example-header-image3"></div>
-                        <mat-card-title>10</mat-card-title>
+                        <mat-card-title *ngIf="countVariables">{{countVariables}}</mat-card-title>
                         <mat-card-subtitle>Variables</mat-card-subtitle>
                     </mat-card-header>
                     <mat-card-content>
                         <div>
                             <p>
-                                
+
                             </p>
                         </div>
                         <div class="w-100">
-                            <canvas baseChart [data]="doughnutChartData" [labels]="doughnutChartLabels"
-                                [chartType]="doughnutChartType" [colors]="[{backgroundColor: ['#28C76F']}]"
-                                [legend]="doughnutChartLegend">
+                            <canvas baseChart [data]="doughnutChartDataVariables"
+                                [labels]="doughnutChartLabelsVariables" [chartType]="doughnutChartType"
+                                [colors]="[{backgroundColor: ['#28C76F']}]" [legend]="doughnutChartLegend">
                             </canvas>
                         </div>
                     </mat-card-content>
@@ -90,19 +90,19 @@
                 <mat-card class="example-card" style="background-color: #cb93f2;">
                     <mat-card-header>
                         <div mat-card-avatar class="example-header-image4"></div>
-                        <mat-card-title>30</mat-card-title>
+                        <mat-card-title *ngIf="countDistricts">{{countDistricts}}</mat-card-title>
                         <mat-card-subtitle>Distritos</mat-card-subtitle>
                     </mat-card-header>
                     <mat-card-content>
                         <div>
                             <p>
-                                
+
                             </p>
                         </div>
                         <div class="w-100">
-                            <canvas baseChart [data]="doughnutChartData" [labels]="doughnutChartLabels"
-                                [chartType]="doughnutChartType" [colors]="[{backgroundColor: ['#9F44D3']}]"
-                                [legend]="doughnutChartLegend">
+                            <canvas baseChart [data]="doughnutChartDataDistritos"
+                                [labels]="doughnutChartLabelsDistritos" [chartType]="doughnutChartType"
+                                [colors]="[{backgroundColor: ['#9F44D3']}]" [legend]="doughnutChartLegend">
                             </canvas>
                         </div>
                     </mat-card-content>
@@ -115,20 +115,19 @@
         </div>
 
         <!-- Cuadros -->
-        <div class="my-1 w-100 d-flex flex-column">
+        <div class=" my-1 w-100 d-flex flex-column">
             <div class="w-100 h-100 d-flex">
-                <div class="w-50 m-1" style="background-color: khaki;">
-                    <mat-card class="example-card">
+                <div class="w-50 tarjetasup m-1" style="background-color: khaki;">
+                    <mat-card class="w-100 example-card">
                         <mat-card-header>
                             <div mat-card-avatar class="example-header-image"></div>
-                            <mat-card-title>Shiba Inu</mat-card-title>
-                            <mat-card-subtitle>Dog Breed</mat-card-subtitle>
+                            <mat-card-title>Historial de mediciones</mat-card-title>
                         </mat-card-header>
-                        <div >
+                        <div class="w-100">
                             <app-linechart></app-linechart>
                         </div>
-                        
-                        <mat-card-content class="my-1">
+
+                        <mat-card-content class="my-2">
                             <p>
                                 La grafica representa el historico de las madiciones del sensor seleccionado
                                 desde Enero hasta el mes actual del presente año.
@@ -136,19 +135,36 @@
                         </mat-card-content>
                     </mat-card>
                 </div>
-                <div class="w-50 m-1" style="background-color: khaki;">
+                <div class="w-50 tarjetainf m-1" style="background-color: khaki;">
 
+                    <mat-card class="w-100 example-card">
+                        <mat-card-header>
+                            <div mat-card-avatar class="example-header-image"></div>
+                            <mat-card-title>Estado de Nodos</mat-card-title>
+                        </mat-card-header>
+                        <div class="w-100">
+                            <app-barchart></app-barchart>
+                        </div>
+
+                        <mat-card-content class="my-2">
+                            <p>
+                                La grafica representa la cantidad de nodos finales que indican el estado vacio
+                                desde Enero hasta el mes actual del presente año.
+                            </p>
+                        </mat-card-content>
+                    </mat-card>
                 </div>
             </div>
+            <!--
             <div class="w-100 d-flex" style="height: 450px;">
                 <div class="w-50 m-1" style="background-color: khaki;">
                 </div>
                 <div class="w-50 m-1" style="background-color: khaki;">
                 </div>
             </div>
+            -->
+
         </div>
 
     </div>
 </div>
-
-

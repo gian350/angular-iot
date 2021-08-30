@@ -1,0 +1,15 @@
+<div class="d-flex flex-column w-100">
+    <div class="d-flex justify-content-end mx-5 mb-3">
+        <mat-form-field appearance="fill" class="mat-select-content">
+            <mat-label>Seleccione</mat-label>
+            <mat-select [(value)]="selectedvalue">
+                <div *ngFor="let item of listaTipos">
+                    <mat-option value="{{item}}">{{item}}</mat-option>
+                </div>
+            </mat-select>
+        </mat-form-field>
+    </div>
+    <div id="divChart">
+        <canvas id="myChart" width="400" height="236"></canvas>
+    </div>
+</div>

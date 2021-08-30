@@ -28,13 +28,15 @@ import {MatSortModule} from '@angular/material/sort';
 import { ChartsModule } from 'ng2-charts';
 
 import { LinechartComponent } from './linechart/linechart.component';
+import { BarchartComponent } from './barchart/barchart.component';
 
 
 @NgModule({
   declarations: [
     DialogSpinnerComponent,
     TablaDistritoComponent,
-    LinechartComponent
+    LinechartComponent,
+    BarchartComponent
   ],
   imports: [
     CommonModule,
@@ -56,6 +58,7 @@ import { LinechartComponent } from './linechart/linechart.component';
     DialogSpinnerComponent,
     TablaDistritoComponent,
     LinechartComponent,
+    BarchartComponent,
   ]
 })
 export class ComponentesModule { }

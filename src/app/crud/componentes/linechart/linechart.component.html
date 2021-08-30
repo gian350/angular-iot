@@ -11,9 +11,9 @@
             </mat-form-field>
         
     </div>
-    <div>
-        <div *ngIf=lineChartData[0].data>
-            <canvas id="canvas">
+    <div class="w-100">
+        <div class="grafico" *ngIf=lineChartData[0].data>
+            <canvas id="canvas" width="400" height="267">
 
             </canvas>
         </div>
